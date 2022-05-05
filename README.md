@@ -6,21 +6,14 @@
 This is a fork of a multi-system chiptune tracker for Windows and Debian Linux Distros ported over to the latest version of Mac OSX.
 
 
-[main] (https://github.com/tildearrow/furnace)| [downloads](#downloads) | [discussion/help](#quick-references) | [developer info](#developer-info) | [unofficial packages](#unofficial-packages) | [FAQ](#frequently-asked-questions)
+[main](https://github.com/tildearrow/furnace) | [downloads](#downloads) | [discussion/help](#quick-references) | [developer info](#developer-info) | [unofficial packages](#unofficial-packages) | [FAQ](#frequently-asked-questions)
 
 ***
 
-## disclaimer
+## Disclaimer!
 [furnace tracker](https://github.com/tildearrow/furnace) is owned by [tildearrow](https://github.com/tildearrow). this fork was made for mac users who don't want to compile/build furnace every time it updates.
 
-
-## downloads
-
-check out the [Releases](https://github.com/tildearrow/furnace/releases) page. available for Windows, macOS and Linux (AppImage).
-
-[see here](https://nightly.link/tildearrow/furnace/workflows/build/master) for unstable developer builds.
-
-## features
+## Features
 
 - supports the following systems:
   - Sega Genesis
@@ -57,69 +50,11 @@ check out the [Releases](https://github.com/tildearrow/furnace/releases) page. a
 
  - **discussion**: see the [Discussions](https://github.com/tildearrow/furnace/discussions) section, or (preferably) the [official Discord server](https://discord.gg/EfrwT2wq7z).
  - **help**: check out the [documentation](papers/doc/README.md). it's mostly incomplete, but has details on effects.
-
-# notes
-
-> how do I use Neo Geo SSG envelopes?
-
-the following effects are provided:
-
-- `22xy`: set envelope mode.
-  - `x` sets the envelope shape, which may be one of the following:
-    - `0: \___` decay
-    - `4: /___` attack once
-    - `8: \\\\` saw
-    - `9: \___` decay
-    - `A: \/\/` inverse obelisco
-    - `B: \¯¯¯` decay once
-    - `C: ////` inverse saw
-    - `D: /¯¯¯` attack
-    - `E: /\/\` obelisco
-    - `F: /___` attack once
-  - if `y` is 1 then the envelope will affect this channel.
-- `23xx`: set envelope period low byte.
-- `24xx`: set envelope period high byte.
-- `25xx`: slide envelope period up.
-- `26xx`: slide envelope period down.
-
-a lower envelope period will make the envelope run faster.
-
+ - 
 ***
-# frequently asked questions
+# Footnotes
 
-> how do I use C64 absolute filter/duty?
-
-on Instrument Editor in the C64 tab there are two options to toggle these.
-also provided are two effects:
-
-- `3xxx`: set fine duty.
-- `4xxx`: set fine cutoff. `xxx` range is 000-7ff.
-additionally, you can change the cutoff and/or duty as a macro inside an instrument by clicking the `absolute cutoff macro` and/or `absolute duty macro` checkbox at the bottom of the instrument. (for the filter, you also need to click the checkbox that says `volume macro is cutoff macro`.)
-
-> Q: how do I use PCM on a PCM-capable system?
-
-A: Two possibilities: the recommended way is via creating the "Amiga/Sample" type instrument and assigning sample to it, or via old, Deflemask-compatible method, using `17xx` effect
-
-> Q: my song sounds very odd at a certain point
-
-A: file a bug report. use the Issues page. it's probably another playback inaccuracy.
-
-> Q: my song sounds correct, but it doesn't in DefleMask
-
-A: file a bug report **here**. it still is a playback inaccuracy.
-
-> Q: my C64 song sounds terrible after saving as .dmf!
-
-A: that's a limitation of the DefleMask format. save in Furnace song format instead (.fur).
-
-> Q: how do I solo channels?
-
-A: right click on the channel name.
-
-***
-# footnotes
-
-copyright (C) 2021-2022 tildearrow and contributors.
+Copyright (C) 2021-2022 tildearrow and contributors.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
