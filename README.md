@@ -1,12 +1,19 @@
-# Furnace Tracker
+# Furnace Tracker For Macintosh OSX
+### OSX 12.3 "Monterey"
 
 ![screenshot](papers/screenshot1.png)
 
-this is a multi-system chiptune tracker.
+This is a fork of a multi-system chiptune tracker for Windows and Debian Linux Distros ported over to the latest version of Mac OSX.
 
-[downloads](#downloads) | [discussion/help](#quick-references) | [developer info](#developer-info) | [unofficial packages](#unofficial-packages) | [FAQ](#frequently-asked-questions)
+
+[main] (https://github.com/tildearrow/furnace)| [downloads](#downloads) | [discussion/help](#quick-references) | [developer info](#developer-info) | [unofficial packages](#unofficial-packages) | [FAQ](#frequently-asked-questions)
 
 ***
+
+## disclaimer
+[furnace tracker](https://github.com/tildearrow/furnace) is owned by [tildearrow](https://github.com/tildearrow). this fork was made for mac users who don't want to compile/build furnace every time it updates.
+
+
 ## downloads
 
 check out the [Releases](https://github.com/tildearrow/furnace/releases) page. available for Windows, macOS and Linux (AppImage).
@@ -51,112 +58,6 @@ check out the [Releases](https://github.com/tildearrow/furnace/releases) page. a
  - **discussion**: see the [Discussions](https://github.com/tildearrow/furnace/discussions) section, or (preferably) the [official Discord server](https://discord.gg/EfrwT2wq7z).
  - **help**: check out the [documentation](papers/doc/README.md). it's mostly incomplete, but has details on effects.
 
-## unofficial packages
-
-[![Packaging status](https://repology.org/badge/tiny-repos/furnace.svg)](https://repology.org/project/furnace/versions)
-
-some people have provided packages for Unix/Unix-like distributions. here's a list.
- - **Arch Linux**: [furnace-git is in the AUR.](https://aur.archlinux.org/packages/furnace-git) thank you Essem!
- - **FreeBSD**: [a package in ports](https://www.freshports.org/audio/furnace/) is available courtesy of ehaupt.
- - **Nix**: [package](https://search.nixos.org/packages?channel=unstable&show=furnace&from=0&size=50&sort=relevance&type=packages&query=furnace) thanks to OPNA2608.
- - **OpenSUSE**: [a package](https://software.opensuse.org/package/furnace) is available, courtesy of fpesari.
-
-***
-# developer info
-
-[![Build furnace](https://github.com/tildearrow/furnace/actions/workflows/build.yml/badge.svg)](https://github.com/tildearrow/furnace/actions/workflows/build.yml)
-
-if you can't download these artifacts (because GitHub requires you to be logged in), [go here](https://nightly.link/tildearrow/furnace/workflows/build/master) instead.
-
-**NOTE: do not download the project's source as a .zip or .tar.gz as these do not include the project's submodules which are necessary to proceed with building. please instead use Git as shown below.**
-
-## dependencies
-
-- CMake
-- SDL2
-- zlib
-- JACK (optional)
-
-SDL2 and zlib are included as submodules.
-
-## getting the source
-
-type the following on a terminal/console: (make sure Git is installed)
-
-```
-git clone --recursive https://github.com/tildearrow/furnace.git
-cd furnace
-```
-
-(the `--recursive` parameter ensures submodules are fetched as well)
-
-## compilation
-
-your typical CMake project.
-
-### Windows using MSVC
-
-as of now tildearrow uses MinGW for Windows builds, but thanks to OPNA2608 this works again!
-
-from the developer tools command prompt:
-
-```
-mkdir build
-cd build
-cmake ..
-msbuild ALL_BUILD.vcxproj
-```
-
-### macOS and Linux
-
-```
-mkdir build
-cd build
-cmake ..
-make
-```
-Alternatively, build scripts are provided in the `scripts/` folder in the root of the repository.
-
-### CMake options
-
-To add an option from the command-line: `-D<NAME>=<VALUE>`  
-Example: `cmake -DBUILD_GUI=OFF -DWARNINGS_ARE_ERRORS=ON ..`
-
-Available options:
-
-| Name | Default | Description |
-| :--: | :-----: | ----------- |
-| `BUILD_GUI` | `ON` if not building for Android, otherwise `OFF` | Build the tracker (disable to build only a headless player) |
-| `WITH_JACK` | `ON` if system-installed JACK detected, otherwise `OFF` | Whether to build with JACK support. Auto-detects if JACK is available |
-| `SYSTEM_FMT` | `OFF` | Use a system-installed version of fmt instead of the vendored one |
-| `SYSTEM_LIBSNDFILE` | `OFF` | Use a system-installed version of libsndfile instead of the vendored one |
-| `SYSTEM_ZLIB` | `OFF` | Use a system-installed version of zlib instead of the vendored one |
-| `SYSTEM_SDL2` | `OFF` | Use a system-installed version of SDL2 instead of the vendored one |
-| `WARNINGS_ARE_ERRORS` | `OFF` (but consider enabling this & reporting any errors that arise from it!) | Whether warnings in furnace's C++ code should be treated as errors |
-
-## usage
-
-```
-./furnace
-```
-
-this opens the program.
-
-```
-./furnace -console <file>
-```
-
-this will play a compatible file.
-
-```
-./furnace -console -view commands <file>
-```
-
-this will play a compatible file and enable the commands view.
-
-**note that these commands only actually work in Linux environments. on other command lines, such as Windows' Command Prompt, or MacOS Terminal, it may not work correctly.**
-
-***
 # notes
 
 > how do I use Neo Geo SSG envelopes?
